@@ -1,5 +1,10 @@
-import Dummy from "./components/Dummy/Dummy";
+import React from "react";
+
+import SideBar from "./components/UI/SideBar/SideBar";
 import LocationContext from "./store/location-context";
+
+import "./App.css";
+import HeroWrapper from "./components/UI/HeroWrapper/HeroWrapper";
 
 const App = () => {
 	return (
@@ -12,7 +17,12 @@ const App = () => {
 				city: "bhaktapur",
 			}}
 		>
-			<Dummy />
+      <React.Fragment>
+        <SideBar />
+        <HeroWrapper>
+          niyoj hello
+        </HeroWrapper>
+      </React.Fragment>
 		</LocationContext.Provider>
 	);
 };
