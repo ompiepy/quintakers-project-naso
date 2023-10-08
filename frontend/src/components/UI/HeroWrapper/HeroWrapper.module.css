@@ -3,6 +3,8 @@
 	flex-grow: 1;
 	height: calc(100vh - 25px);
 
+	display: flex;
+
     padding: 25px;
 	margin: 25px;
 

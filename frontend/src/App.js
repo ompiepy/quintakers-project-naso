@@ -1,30 +1,21 @@
 import React from "react";
 
-import SideBar from "./components/UI/SideBar/SideBar";
-import LocationContext from "./store/location-context";
+import NavBar from "./components/UI/NavBar/NavBar";
 
 import "./App.css";
 import HeroWrapper from "./components/UI/HeroWrapper/HeroWrapper";
-import TodayWeather from "./components/Weather/TodayWeather/TodayWeather";
+import TodayWeather from "./components/SideBar/TodayWeather/TodayWeather";
+import Hero from "./components/Hero/Hero";
 
 const App = () => {
 	return (
-		<LocationContext.Provider
-			value={{
-				latitude: 27.67,
-				longitude: 85.42,
-				country: "nepal",
-				countryCode: "NP",
-				city: "bhaktapur",
-			}}
-		>
-      <React.Fragment>
-        <SideBar />
-        <HeroWrapper>
-          <TodayWeather />
-        </HeroWrapper>
-      </React.Fragment>
-		</LocationContext.Provider>
+		<React.Fragment>
+			<NavBar />
+			<HeroWrapper>
+				<Hero />
+				<TodayWeather />
+			</HeroWrapper>
+		</React.Fragment>
 	);
 };
 
