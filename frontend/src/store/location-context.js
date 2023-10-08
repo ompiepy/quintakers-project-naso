@@ -23,6 +23,7 @@ export const LocationContextProvider = (props) => {
 	const [weatherData, setWeatherData] = useState({
 		weatherDescription: "",
 		icon: "",
+        feels: 0,
 		temperature: 0,
 		minTemp: 0,
 		maxTemp: 0,
@@ -57,6 +58,7 @@ export const LocationContextProvider = (props) => {
 				setWeatherData({
 					weatherDescription: data.weather[0].description,
 					icon: data.weather[0].icon,
+                    feels: data.main.feels_like,
 					temperature: data.main.temp,
 					minTemp: data.main.temp_min,
 					maxTemp: data.main.temp_max,

@@ -18,7 +18,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 60%;
+	height: 70%;
 	width: 100%;
 	background: url("../../../assets/sunny.png") no-repeat top right;
 	background-size: cover;
@@ -28,6 +28,10 @@
 
 .wrapper__info p {
 	text-align: center;
+}
+
+.wrapper__info img {
+	height: 150px;
 }
 
 .wrapper__info p:first-child {
@@ -44,13 +48,13 @@
 	font-size: 1.2rem;
 }
 
-.wrapper__info p:nth-child(2) {
+.wrapper__info p:nth-child(3) {
 	font-weight: 900;
 	font-family: "Lato", sans-serif;
 	font-size: 5rem;
 }
 
-.wrapper__info p:nth-child(3) {
+.wrapper__info p:nth-child(4) {
 	font-size: 1.2rem;
 }
 
@@ -61,7 +65,7 @@
 }
 
 .wrapper__messages {
-	height: 40%;
+	height: 30%;
 	padding: 0.5rem;
 	overflow: auto;
 }

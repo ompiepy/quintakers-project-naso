@@ -14,23 +14,39 @@ const TodayWeather = () => {
 				<p>
 					<FaLocationDot />{" "}
 					<span>
-						{typeof(ctx.city) != "undefined"?  `${ctx.city} , ${ctx.country}` : ctx.country}
+						{typeof ctx.city != "undefined"
+							? `${ctx.city} , ${ctx.country}`
+							: ctx.country}
 					</span>
 				</p>
 				<p>
-					<span>19</span>&deg;
+					<img
+						src={`https://openweathermap.org/img/wn/${ctx.weather.icon}@2x.png`}
+					/>
 				</p>
-				<p>Rainy</p>
-				<p>Feels like: 24&deg;</p>
+				<p>
+					<span>{ctx.weather.temperature}</span>&deg;
+				</p>
+				<p style={{ textTransform: "capitalize" }}>
+					{ctx.weather.weatherDescription}
+				</p>
+				<p>Feels like: {ctx.weather.feels}&deg;</p>
 			</div>
 
 			<div className={styles["wrapper__messages"]}>
-                <WeatherUpdate title="Haleys commet alert" msg="Haleys Comet is approaching in July 7, 2023. And this is exciting. Are you ready?" />
-                <WeatherUpdate title="Haleys commet alert" msg="Haleys Comet is approaching in July 7, 2023. And this is exciting. Are you ready?" />
-                <WeatherUpdate title="Haleys commet alert" msg="Haleys Comet is approaching in July 7, 2023. And this is exciting. Are you ready?" />
-                <WeatherUpdate title="Haleys commet alert" msg="Haleys Comet is approaching in July 7, 2023. And this is exciting. Are you ready?" />
-                <WeatherUpdate title="Haleys commet alert" msg="Haleys Comet is approaching in July 7, 2023. And this is exciting. Are you ready?" />
-            </div>
+				<WeatherUpdate
+					title="NASA Space App Challenge"
+					msg="The NASA International Space Apps challenge will be held October 7-8, 2023."
+				/>
+				<WeatherUpdate
+					title="Total Lunar Eclipse"
+					msg="7 to 8 September 2025 Total Lunar Eclipse visible from Nepal."
+				/>
+				<WeatherUpdate
+					title="Opportunity to observer a comet"
+					msg="Comet 55P/Tempel-Tuttle comes to perihelion, 2031 May 20"
+				/>
+			</div>
 		</div>
 	);
 };
