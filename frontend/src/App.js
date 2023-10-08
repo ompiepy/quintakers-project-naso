@@ -5,6 +5,7 @@ import LocationContext from "./store/location-context";
 
 import "./App.css";
 import HeroWrapper from "./components/UI/HeroWrapper/HeroWrapper";
+import TodayWeather from "./components/Weather/TodayWeather/TodayWeather";
 
 const App = () => {
 	return (
@@ -20,7 +21,7 @@ const App = () => {
       <React.Fragment>
         <SideBar />
         <HeroWrapper>
-          niyoj hello
+          <TodayWeather />
         </HeroWrapper>
       </React.Fragment>
 		</LocationContext.Provider>
