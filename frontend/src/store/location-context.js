@@ -16,14 +16,14 @@ export const LocationContextProvider = (props) => {
 		longitude: 85.429,
 		country: "nepal",
 		countryCode: "NPL",
-        weather: {},
+		weather: {},
 		city: "bhaktapur",
 	});
 
 	const [weatherData, setWeatherData] = useState({
 		weatherDescription: "",
 		icon: "",
-        feels: 0,
+		feels: 0,
 		temperature: 0,
 		minTemp: 0,
 		maxTemp: 0,
@@ -58,7 +58,7 @@ export const LocationContextProvider = (props) => {
 				setWeatherData({
 					weatherDescription: data.weather[0].description,
 					icon: data.weather[0].icon,
-                    feels: data.main.feels_like,
+					feels: data.main.feels_like,
 					temperature: data.main.temp,
 					minTemp: data.main.temp_min,
 					maxTemp: data.main.temp_max,
@@ -68,6 +68,7 @@ export const LocationContextProvider = (props) => {
 					windSpeed: data.wind.speed,
 					sunrise: data.sys.sunrise,
 					sunset: data.sys.sunset,
+					timezone: data.timezone,
 				});
 			});
 	};

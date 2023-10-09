@@ -1,9 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import LocationContext from "../../../store/location-context";
 
+import styles from "./SearchSection.module.css";
+
+const months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
 const SearchSection = () => {
 	const ctx = useContext(LocationContext);
 
+	const [time, setTime] = useState(new Date());
 	const [location, setLocation] = useState("");
 
 	const handleInputChange = (event) => {
@@ -35,14 +40,34 @@ const SearchSection = () => {
 				});
 		}
 	}, [location]);
+	
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setTime(new Date());
+		}, 1000);
+
+		return () => clearInterval(intervalId);
+	}, []);
 
 	return (
-		<div>
-			<input
-				type="text"
-				placeholder="Enter your location"
-				onKeyDown={handleInputChange}
-			/>
+		<div className={styles["hero__header"]}>
+			<div className={styles["hero__header__time"]}>
+				<div className={styles["hero__header__time--info"]}>
+					<p>{`${time.getHours()} : ${time.getMinutes()}`}</p>
+					<p>{`${months[time.getMonth()]} ${time.getDate()} ${time.getFullYear()}`}</p>
+				</div>
+				<img
+					src={`https://flagsapi.com/${ctx.countryCode}/shiny/64.png`}
+					alt="Flag"
+				/>
+			</div>
+			<div className={styles["hero__header__search"]}>
+				<input
+					type="text"
+					placeholder="Enter your location..."
+					onKeyDown={handleInputChange}
+				/>
+			</div>
 		</div>
 	);
 };
