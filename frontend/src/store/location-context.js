@@ -15,7 +15,7 @@ export const LocationContextProvider = (props) => {
 		latitude: 27.62,
 		longitude: 85.429,
 		country: "nepal",
-		countryCode: "NPL",
+		countryCode: "NP",
 		weather: {},
 		city: "bhaktapur",
 	});
@@ -34,6 +34,30 @@ export const LocationContextProvider = (props) => {
 		sunrise: 0,
 		sunset: 0,
 	});
+
+	useEffect(() => {
+		fetch(
+			`https://api.openweathermap.org/data/2.5/weather?lat=${dataPos.latitude}&lon=${dataPos.longitude}&units=metric&appid=e73ab71246cd8b4a162482332030a10d`
+		)
+			.then((response) => response.json())
+			.then((data) => {
+				setWeatherData({
+					weatherDescription: data.weather[0].description,
+					icon: data.weather[0].icon,
+					feels: data.main.feels_like,
+					temperature: data.main.temp,
+					minTemp: data.main.temp_min,
+					maxTemp: data.main.temp_max,
+					pressure: data.main.pressure,
+					humidity: data.main.humidity,
+					visibility: data.visibility,
+					windSpeed: data.wind.speed,
+					sunrise: data.sys.sunrise,
+					sunset: data.sys.sunset,
+					timezone: data.timezone,
+				});
+			});
+	}, []);
 
 	const locationChangeHandler = (lat, lng) => {
 		fetch(

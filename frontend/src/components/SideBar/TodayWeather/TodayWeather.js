@@ -13,7 +13,7 @@ const TodayWeather = () => {
 			<div className={styles["wrapper__info"]}>
 				<p>
 					<FaLocationDot />{" "}
-					<span>
+					<span style={{textTransform: "capitalize"}}>
 						{typeof ctx.city != "undefined"
 							? `${ctx.city} , ${ctx.country}`
 							: ctx.country}
