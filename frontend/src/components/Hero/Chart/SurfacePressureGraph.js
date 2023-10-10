@@ -11,8 +11,9 @@ const SurfaceGraph = () => {
       labels: ["0", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24"],
       datasets: [{
         label: "Time in hours VS. Surface Pressure (in kPA)",
-        data: [87.16, 87.3, 87.31, 87.15, 86.97, 86.97, 87.08, 87.24, 87.28, 87.18, 87.07, 87.0, 87.2],
-        borderColor: 'red', // Change the color of the curve
+        // data: [87.16, 87.3, 87.31, 87.15, 86.97, 86.97, 87.08, 87.24, 87.28, 87.18, 87.07, 87.0, 87.2],
+        data: [58, 47, 48, 33, 19, 43, 58, 72, 62, 35, 23, 30, 59],
+        borderColor: 'orange', // Change the color of the curve
         borderWidth: 2,
         fill: false,
         cubicInterpolationMode: 'monotone',
@@ -38,18 +39,18 @@ const SurfaceGraph = () => {
           y: {
             beginAtZero: true,
             grid: {
-              color: 'blue', // Change the color of the Y-axis grid lines
+              color: 'white', // Change the color of the Y-axis grid lines
             },
             ticks: {
-              color: 'red', // Change the color of the Y-axis labels
+              color: 'white', // Change the color of the Y-axis labels
             },
           },
           x: {
             grid: {
-              color: 'green', // Change the color of the X-axis grid lines
+              color: 'white', // Change the color of the X-axis grid lines
             },
             ticks: {
-              color: 'yellow', // Change the color of the X-axis labels
+              color: 'white', // Change the color of the X-axis labels
             },
           },
         },
@@ -57,7 +58,7 @@ const SurfaceGraph = () => {
           legend: {
             display: true,
             labels: {
-              color: 'red', // Change the color of the legend labels
+              color: 'white', // Change the color of the legend labels
             },
           },
         },
@@ -73,7 +74,7 @@ const SurfaceGraph = () => {
   }, []);
 
   return (
-    <div style={{height:"400px", marginTop: "40px"}}>
+    <div style={{height:"400px", marginTop: "30px"}}>
       <canvas ref={chartRef}></canvas>
     </div>
   );

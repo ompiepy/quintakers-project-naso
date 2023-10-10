@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 
 import styles from "./Graph.module.css";
 
-const TempratureGraph = ({ dataBar, width, height }) => {
+const TempratureGraph = ({ dataBar, width, height, labelColor  }) => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
 
@@ -39,21 +39,28 @@ const TempratureGraph = ({ dataBar, width, height }) => {
         scales: {
             x: {
                 grid: {
-                    color: '#ccc', // Change the color of the X-axis grid lines
+                    color: 'white', // Change the color of the X-axis grid lines
                   },
                   ticks: {
-                    color: 'yellow', // Change the color of the X-axis labels
+                    color: 'white', // Change the color of the X-axis labels
                   },
             },
 
           y: {
             beginAtZero: true,
             grid: {
-                color: '#ccc', // Change the color of the Y-axis grid lines
+                color: 'white', // Change the color of the Y-axis grid lines
               },
               ticks: {
-                color: '#ccc', // Change the color of the Y-axis labels
+                color: 'white', // Change the color of the Y-axis labels
               },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: labelColor, // Set the font color of the label
+            },
           },
         },
       },

@@ -49,12 +49,16 @@ const SearchSection = () => {
 		return () => clearInterval(intervalId);
 	}, []);
 
+	
+	// Format the minute with a leading zero
+	const formattedMinutes = time.getMinutes().toString().padStart(2, '0');
+
 	return (
 		<div className={styles["hero__header"]}>
 			<div className={styles["hero__header__time"]}>
 				<div className={styles["hero__header__time--info"]}>
-					<p>{`${time.getHours()} : ${time.getMinutes()}`}</p>
-					<p>{`${months[time.getMonth()]} ${time.getDate()} ${time.getFullYear()}`}</p>
+					<p>{`${time.getHours()} : ${formattedMinutes}`}</p>
+					<p>{`${months[time.getMonth()]} ${time.getDate()}, ${time.getFullYear()}`}</p>
 				</div>
 				<img
 					src={`https://flagsapi.com/${ctx.countryCode}/shiny/64.png`}

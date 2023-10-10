@@ -29,6 +29,7 @@ const Hero = () => {
 			18.9, 18.62, 19,
 		],
 		label: "Temprature in Celsius Vs. Time in hours",
+		labelColor: "white",
 	};
 
 	return (
@@ -39,11 +40,12 @@ const Hero = () => {
 					dataBar={tempData}
 					width="50px"
 					height="50px"
+					labelColor={tempData.labelColor}
 				/>
 				<SurfaceGraph width="50px" height="50px" />
 			</div>
-			<div style={{width: "auto", height: "100px", overflowY: "scroll"}}>
-				<img src={nasa} style={{objectFit: "fill"}} />
+			<div className={styles["spaceImg"]}>
+				<img src={nasa} className={styles["spaceImgAct"]} />
 			</div>
 		</div>
 	);
