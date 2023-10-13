@@ -10,7 +10,7 @@ const SurfaceGraph = () => {
     const data = {
       labels: ["0", "2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24"],
       datasets: [{
-        label: "Time in hours VS. Surface Pressure (in kPA)",
+        label: "Time in Hours VS. Humidity (in %)",
         // data: [87.16, 87.3, 87.31, 87.15, 86.97, 86.97, 87.08, 87.24, 87.28, 87.18, 87.07, 87.0, 87.2],
         data: [58, 47, 48, 33, 19, 43, 58, 72, 62, 35, 23, 30, 59],
         borderColor: 'orange', // Change the color of the curve
