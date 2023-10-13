@@ -28,7 +28,7 @@ const Hero = () => {
 			19.05, 21.37, 22.42, 22.33, 23.58, 22.85, 20.9, 20.22, 19.73, 19.29,
 			18.9, 18.62, 19,
 		],
-		label: "Temprature in Celsius Vs. Time in hours",
+		label: "Time in Hours VS. Temperature (in Celsius)",
 		labelColor: "white",
 	};
 
